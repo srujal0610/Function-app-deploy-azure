@@ -1,7 +1,13 @@
 {
-    "name": "my-node-api",
-    "version": "1.0.0",
-    "main": "index.js",
-    "dependencies": {}
+  "name": "azure-function-node",
+  "version": "1.0.0",
+  "description": "Sample Node.js API for Azure Functions",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
 }
 
