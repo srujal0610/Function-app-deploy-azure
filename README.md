@@ -1,2 +1,3 @@
 # Function-app-deploy-azure
-Node project to deploy using function app in azure 
+
+Node project to deploy in azure function
