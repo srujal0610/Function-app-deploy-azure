@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -18,12 +18,11 @@ jobs:
           node-version: 18
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install --production
 
-      - name: Zip and Upload Code
-        run: |
-          zip -r function.zip .
-      
+      - name: Zip Application
+        run: zip -r function.zip . -x "node_modules/*" ".github/*"
+
       - name: Deploy to Azure Functions
         uses: Azure/functions-action@v1
         with:
