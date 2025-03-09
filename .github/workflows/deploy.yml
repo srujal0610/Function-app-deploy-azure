@@ -34,8 +34,9 @@ jobs:
         run: func pack -o function.zip --build-native-deps
 
       - name: Deploy to Azure Functions
-        uses: Azure/functions-action@v1
+        uses: Azure/functions-action@v1          
         with:
           app-name: my-node-api
           package: function.zip
+          scm-do-build-during-deployment: true
           publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
